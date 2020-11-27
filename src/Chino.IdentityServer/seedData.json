@@ -1,0 +1,13 @@
+﻿{
+  "Users": [
+    {
+      "UserName": "alice",
+      "Email": "alice@corala.space",
+      "EmailConfirmed": true,
+      "Password": "Abc123456!",
+      "Name": "Alice Smith",
+      "NickName": "Alice",
+      "WebSite": "https://alice.moe"
+    }
+  ]
+}
