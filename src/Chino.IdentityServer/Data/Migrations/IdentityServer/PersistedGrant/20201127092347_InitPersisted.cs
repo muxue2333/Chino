@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Chino.IdentityServer.Data.Migrations.IdentityServer.PersistedGrantDb
+namespace Chino.IdentityServer.Data.Migrations.IdentityServer.PersistedGrant
 {
     public partial class InitPersisted : Migration
     {
@@ -11,15 +11,15 @@ namespace Chino.IdentityServer.Data.Migrations.IdentityServer.PersistedGrantDb
                 name: "DeviceCodes",
                 columns: table => new
                 {
-                    UserCode = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    DeviceCode = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    SubjectId = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
-                    SessionId = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
-                    ClientId = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    Description = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
-                    CreationTime = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Expiration = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Data = table.Column<string>(type: "TEXT", maxLength: 50000, nullable: false)
+                    UserCode = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    DeviceCode = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    SubjectId = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    SessionId = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    ClientId = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Expiration = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Data = table.Column<string>(type: "nvarchar(max)", maxLength: 50000, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -30,16 +30,16 @@ namespace Chino.IdentityServer.Data.Migrations.IdentityServer.PersistedGrantDb
                 name: "PersistedGrants",
                 columns: table => new
                 {
-                    Key = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    Type = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    SubjectId = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
-                    SessionId = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
-                    ClientId = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    Description = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
-                    CreationTime = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Expiration = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    ConsumedTime = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    Data = table.Column<string>(type: "TEXT", maxLength: 50000, nullable: false)
+                    Key = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    SubjectId = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    SessionId = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    ClientId = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Expiration = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ConsumedTime = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Data = table.Column<string>(type: "nvarchar(max)", maxLength: 50000, nullable: false)
                 },
                 constraints: table =>
                 {

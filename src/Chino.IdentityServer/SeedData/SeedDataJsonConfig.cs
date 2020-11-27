@@ -11,6 +11,7 @@ namespace Chino.IdentityServer.SeedData
     public class SeedDataJsonConfig
     {
         public User[] Users { get; set; }
+        public Client[] Clients { get; set; }
 
         public class User
         {
@@ -29,6 +30,22 @@ namespace Chino.IdentityServer.SeedData
             public string NickName { get; set; }
 
             #endregion
+        }
+
+        public class Client
+        {
+            public string ClientId { get; set; }
+            public string ClientName { get; set; }
+            public ICollection<string> AllowedGrantTypes { get; set; } = new HashSet<string>();
+            public ICollection<string> ClientSecrets { get; set; } = new HashSet<string>();
+            public ICollection<string> AllowedScopes { get; set; } = new HashSet<string>();
+
+            public ICollection<string> RedirectUris { get; set; } = new HashSet<string>();
+            public string FrontChannelLogoutUri { get; set; }
+            public ICollection<string> PostLogoutRedirectUris { get; set; } = new HashSet<string>();
+            public bool AllowOfflineAccess { get; set; } = false;
+
+            public string Description { get; set; }
         }
     }
 }
