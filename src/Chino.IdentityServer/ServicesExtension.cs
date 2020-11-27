@@ -28,6 +28,11 @@ namespace Chino.IdentityServer
                     services.AddDbContext<TAppDbContext>(options =>
                         options.UseSqlite(connectionString));
                     break;
+                case "sqlserver":
+                case "mssql":
+                    services.AddDbContext<TAppDbContext>(options =>
+                        options.UseSqlServer(connectionString));
+                    break;
                 default:
                     throw new Exception($"Unknow database provider type: {providerType} - Chino Application");
             }
@@ -50,6 +55,10 @@ namespace Chino.IdentityServer
                 case "sqlite3":
                     builder.UseSqlite(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
                     break;
+                case "sqlserver":
+                case "mssql":
+                    builder.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
+                    break;
                 default:
                     throw new Exception($"Unknow database provider type: {providerType} - IdentityServer Configuration");
             }
@@ -70,6 +79,10 @@ namespace Chino.IdentityServer
                 case "sqlite":
                 case "sqlite3":
                     builder.UseSqlite(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
+                    break;
+                case "sqlserver":
+                case "mssql":
+                    builder.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
                     break;
                 default:
                     throw new Exception($"Unknow database provider type: {providerType} - IdentityServer Operational");

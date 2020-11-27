@@ -1,5 +1,5 @@
-Chino
+# Chino
 
-Simple OpenID Connect And OAuth2.0 Server.
+**私の家の仕事を継いで　立派なバリスタになりたいです**
 
 # The project is not ready for public display
