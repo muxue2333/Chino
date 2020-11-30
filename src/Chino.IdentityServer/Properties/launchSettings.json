@@ -19,9 +19,8 @@
     },
     "Chino.IdentityServer": {
       "commandName": "Project",
-      "commandLineArgs": "/seed",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -1,9 +1,13 @@
 ﻿@page
-@{
-    Layout = "_Layout";
-}
 @model Chino.IdentityServer.Pages.IndexModel
+@inject IViewLocalizer Localizer
+@{
+    this.ViewData["Title"] = Localizer["Home"];
+    foreach (var item in Localizer.GetAllStrings())
+    {
+        Console.WriteLine("item");
+    }
+}
 Hello, World
 
-@{
-}
+

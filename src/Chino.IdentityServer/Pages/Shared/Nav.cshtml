@@ -1,0 +1,22 @@
+﻿@inject IConfiguration configuration
+
+<div class="nav-page">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="~/" class="navbar-brand">
+            @(configuration["Chino:NavTitle"] ?? "Chino")
+        </a>
+
+        <ul class="navbar-nav mr-auto">
+            @if (User.Identity.IsAuthenticated)
+            {
+
+            }
+            else
+            {
+            <li class="nav-item">
+                <a class="nav-link" asp-page="Account/Login">Login</a>
+            </li>
+            }
+        </ul>
+    </nav>
+</div>
