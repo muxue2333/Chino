@@ -1,13 +1,35 @@
 ﻿@page
 @model Chino.IdentityServer.Pages.IndexModel
-@inject IViewLocalizer Localizer
+@inject IStringLocalizer<IndexModel> Localizer
+@inject Chino.IdentityServer.Services.CommonLocalizationService CL
+
 @{
     this.ViewData["Title"] = Localizer["Home"];
-    foreach (var item in Localizer.GetAllStrings())
-    {
-        Console.WriteLine("item");
-    }
 }
 Hello, World
+<br>
+@CL["hello"]
+
+
+<!--<div class="container">-->
+    <!-- data-toggle="collapse"属性表示该链接可以展开或折叠其他元素 -->
+    <!-- href="#myDiv"用于指明要展开或折叠的是id为myDiv的元素 -->
+    <!--<a class="btn btn-primary" role="button" data-toggle="collapse" href="#myDiv" aria-expanded="true"
+       aria-controls="myDiv">
+        使用链接控制折叠
+    </a>-->
+    <!-- data-toggle="collapse"属性表示该链接可以展开或折叠其他元素 -->
+    <!-- data-target="#myDiv"用于指明要展开或折叠的是ID为myDiv的元素 -->
+    <!--<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#myDiv" aria-expanded="true"
+            aria-controls="myDiv">
+        使用按钮控制折叠
+    </button>-->
+    <!-- 应用collapse样式表示该元素是可折叠的 -->
+    <!--<div class="collapse" id="myDiv">
+        <div class="well">
+            疯狂Java讲义是一本必读的Java学习经典。
+        </div>
+    </div>
+</div>-->
 
 

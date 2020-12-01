@@ -1,0 +1,10 @@
+﻿@inject IConfiguration configuration
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        @*&copy; 2020 - TryI18N - <a asp-area="" asp-page="/Privacy">Privacy</a>*@
+        &copy; 2020 - @configuration["Chino:Title"]
+    </div>
+</footer>
+
+<script src="~/js/chino.js" asp-append-version="true"></script>

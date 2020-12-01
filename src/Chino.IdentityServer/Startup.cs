@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Chino.IdentityServer.Data;
 using Chino.IdentityServer.Models.User;
+using Chino.IdentityServer.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -43,11 +44,14 @@ namespace Chino.IdentityServer
             {
                 var supportedCultures = new List<CultureInfo>
                 {
-                    new CultureInfo("cmn-Hans"),
+                    new CultureInfo("ja"),
+                    new CultureInfo("en"),
+                    new CultureInfo("zh"),
+                    new CultureInfo("zh-CN"),
                     new CultureInfo("en-US")
                 };
 
-                options.DefaultRequestCulture = new RequestCulture("cmn-Hans");
+                options.DefaultRequestCulture = new RequestCulture("zh-CN");
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
             });
@@ -55,7 +59,8 @@ namespace Chino.IdentityServer
             #endregion
 
             services.AddRazorPages()
-                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+                .AddViewLocalization();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -101,7 +106,9 @@ namespace Chino.IdentityServer
             #endregion
             services.AddAuthentication();
 
-            
+
+            services.AddSingleton<CommonLocalizationService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
