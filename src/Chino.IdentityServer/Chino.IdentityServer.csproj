@@ -26,6 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Resources\DataAnnotation\DataAnnotationResources.zh.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Pages\IndexModel.ja.resx">
       <LastGenOutput>IndexModel.zh.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>

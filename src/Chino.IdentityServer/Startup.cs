@@ -1,22 +1,17 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
 using Chino.IdentityServer.Data;
 using Chino.IdentityServer.Models.User;
+using Chino.IdentityServer.Resources.DataAnnotation;
 using Chino.IdentityServer.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace Chino.IdentityServer
@@ -59,7 +54,16 @@ namespace Chino.IdentityServer
             #endregion
 
             services.AddRazorPages()
-                .AddViewLocalization();
+                .AddViewLocalization()
+                .AddDataAnnotationsLocalization(options =>
+                {
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                    {
+                        var assemblyName = new AssemblyName(typeof(DataAnnotationResources).GetTypeInfo().Assembly.FullName);
+                        return factory.Create($"DataAnnotation.{nameof(DataAnnotationResources)}", assemblyName.Name);
+                    };
+                    
+                });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
