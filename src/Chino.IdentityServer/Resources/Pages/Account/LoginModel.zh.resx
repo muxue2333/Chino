@@ -123,13 +123,25 @@
   <data name="btn_login" xml:space="preserve">
     <value>登录</value>
   </data>
+  <data name="invalid_credentials_error_message" xml:space="preserve">
+    <value>用户名或密码无效</value>
+  </data>
+  <data name="invalid_return_URL" xml:space="preserve">
+    <value>重定向URL无效：{0}</value>
+  </data>
   <data name="login_by_account" xml:space="preserve">
     <value>使用账号登录</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>口令</value>
   </data>
   <data name="remember_login" xml:space="preserve">
     <value>记住我的登录</value>
   </data>
   <data name="title_login" xml:space="preserve">
     <value>登录</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>用户名</value>
   </data>
 </root>

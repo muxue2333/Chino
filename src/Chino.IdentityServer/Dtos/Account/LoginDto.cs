@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Chino.IdentityServer.Pages.Account;
 
 namespace Chino.IdentityServer.Dtos.Account
 {
@@ -11,10 +12,9 @@ namespace Chino.IdentityServer.Dtos.Account
         [Required(ErrorMessage = "username_required")]
         public string Username { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "passwd_required")]
         public string Password { get; set; }
 
         public bool RememberLogin { get; set; }
-        public string ReturnUrl { get; set; }
     }
 }

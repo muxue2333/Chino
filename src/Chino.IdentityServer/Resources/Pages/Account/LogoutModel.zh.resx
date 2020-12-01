@@ -117,16 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="error1" xml:space="preserve">
-    <value>出错了</value>
+  <data name="btn_logout" xml:space="preserve">
+    <value>登出</value>
   </data>
-  <data name="hello" xml:space="preserve">
-    <value>你好</value>
-  </data>
-  <data name="login" xml:space="preserve">
-    <value>登录</value>
-  </data>
-  <data name="logout" xml:space="preserve">
+  <data name="title_logout" xml:space="preserve">
     <value>退出登录</value>
+  </data>
+  <data name="title_require_logout" xml:space="preserve">
+    <value>确定要登出账号吗？</value>
   </data>
 </root>

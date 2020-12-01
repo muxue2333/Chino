@@ -1,0 +1,9 @@
+﻿@inject CommonLocalizationService L
+
+@if(!ViewContext.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <strong>@L["error1"]</strong>
+        <div asp-validation-summary="All" class="text-danger"></div>
+    </div>
+}
